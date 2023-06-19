@@ -1,0 +1,18 @@
+2023-06-19 22:22:07,890 :INFO : test_color_change_demo :Received data is: {'color': 'Green', 'text_input': '1st test', 'pre_filled_input': 'Color change not required', 'color_to_change': False}
+2023-06-19 22:22:08,813 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+2023-06-19 22:22:10,866 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-06-19 22:22:10,902 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-06-19 22:22:13,908 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-06-19 22:22:13,908 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-06-19 22:22:14,281 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-06-19 22:22:14,281 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-06-19 22:22:16,322 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-06-19 22:22:16,322 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-06-19 22:22:16,396 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-06-19 22:22:16,396 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-06-19 22:22:20,095 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+2023-06-19 22:22:23,350 :INFO : test_drag_and_drop :Draggable item not in the expected range: range(592, 602)
+2023-06-19 22:22:26,351 :ERROR : test_drag_and_drop :Response: Draggable item not in the expected range: range(592, 602); Known Issue: Java handler implementation required for this operation
+2023-06-19 22:22:26,753 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
+2023-06-19 22:22:29,896 :INFO : test_input_slider_control :Detected value: 50%, expecting value: 50%
+2023-06-19 22:22:33,464 :INFO : test_input_slider_control :Detected value: 80%, expecting value: 80%

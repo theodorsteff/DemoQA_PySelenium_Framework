@@ -1,0 +1,87 @@
+{
+  "debug_showcase": true,
+  "testcase_name": "color_change_demo",
+  "data_sets": [
+    {
+      "color": "Green",
+      "text_input": "1st test",
+      "pre_filled_input": "Color change not required",
+      "color_to_change": false
+    },
+    {
+      "color": "Purple",
+      "text_input": "2nd test",
+      "pre_filled_input": "Color change required",
+      "color_to_change": true
+    }
+  ],
+  "locators": {
+    "text_input_field": {
+      "clear_required": false,
+      "locator_hook": "#myTextInput",
+      "locator_type": "CSS_SELECTOR"
+    },
+    "pre_filled_text_field": {
+      "clear_required": true,
+      "locator_hook": "#myTextInput2",
+      "locator_type": "CSS_SELECTOR"
+    },
+    "placeholder_text_field": {
+      "clear_required": false,
+      "locator_hook": "#placeholderText",
+      "locator_type": "CSS_SELECTOR"
+    },
+    "text_area": {
+      "clear_required": false,
+      "locator_hook": "#myTextarea",
+      "locator_type": "CSS_SELECTOR"
+    },
+    "button": {
+      "locator_hook": "//*[@id='myButton']"
+    },
+    "read_only_text_field": {
+      "locator_hook": "//*[@id='readOnlyText']"
+    },
+    "paragraph_with_text": {
+      "locator_hook": "//*[@id='pText']"
+    },
+    "checkbox": {
+      "locator_hook": "#checkBox1"
+    },
+    "hover_dropdown": {
+      "locator_hook": "#myDropdown",
+      "hover_option_text": "Link Two"
+    },
+    "dynamic_subhead": {
+      "locator_hook": "#tbodyId > tr:nth-child(1) > td:nth-child(4) > h3"
+    },
+    "draggable_item": {
+      "locator_hook": "#logo"
+    },
+    "dropzone_1": {
+      "locator_hook": "#drop1"
+    },
+    "dropzone_2": {
+      "locator_hook": "#drop2"
+    },
+    "iframe2": {
+      "iframe_name": "myFrame2",
+      "iframe_body": "body > h4",
+      "iframe_expected_text": "iFrame Text"
+    },
+    "iframe3": {
+      "iframe_name": "myFrame3",
+      "iframe_checkbox": "#checkBox6"
+    },
+    "input_slider_control": {
+      "locator_hook": "mySlider",
+      "x_offset": 40,
+      "y_offset": 0
+    },
+    "progress_bar": {
+      "locator_hook": "progressLabel",
+      "start_progress_value": "50%",
+      "end_progress_value": "80%"
+    }
+  }
+}
