@@ -14,8 +14,8 @@ The project uses a virtual environment with the required packages already instal
 ### selenium
 `» pip install selenium`  
 
-For test suite execution, change the folder path to the "tests" folder of the project and use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases)  
-`» cd <DemoQA_PySelenium_Framework directory>\tests`
+For test suite execution, change the folder path to the "tests" folder of the project and use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases)    
+`» cd <DemoQA_PySelenium_Framework directory>\tests`  
 `» py.test --html report.html` 
 
 **Python version used:** *Python 3.11.0*  
