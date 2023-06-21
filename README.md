@@ -12,6 +12,11 @@ The project uses a virtual environment with the required packages already instal
 `» pip install pytest`
 
 ### selenium
-`» pip install selenium`
+`» pip install selenium`  
 
-**Python version used:** *Python 3.11*
+### For test execution, please use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases)
+`» py.test --html report.html` 
+
+**Python version used:** *Python 3.11.0*
+**Selenium library version used:** *selenium 4.10.0*
+**Pytest library version used:** *Python 7.3.1*
