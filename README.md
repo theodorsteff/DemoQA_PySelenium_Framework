@@ -19,4 +19,4 @@ For test suite execution, please use the pytest syntax, as shown below ("--html 
 
 **Python version used:** *Python 3.11.0*  
 **Selenium library version used:** *selenium 4.10.0*  
-**Pytest library version used:** *Python 7.3.1*  
+**Pytest library version used:** *pytest 7.3.1*  
