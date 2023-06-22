@@ -2,7 +2,6 @@
 ## Selenium with Python integration
 
 **Demo Project:** *Selenium testing framework implementation with Python*  
-**Showcase implementation by:** *Theodor-Stefan Baca*  
 **Dependency packages installed:** **_pytest_ and _selenium_** *(including their automatically installed dependencies)*  
 **Credits:** *The demo page used is provided by SeleniumBase (https://seleniumbase.io/demo_page)*
 
