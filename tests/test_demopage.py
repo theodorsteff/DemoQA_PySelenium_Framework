@@ -28,6 +28,8 @@ def verify_text_in_all_items(demopage_obj, text_item, logger):
     :param logger: object for the test logger
     :return: (bool) verification result
     """
+
+    # Read the required text from the screen
     required_texts = (
         demopage_obj.read_button(),
         demopage_obj.read_only_field(),
@@ -38,14 +40,27 @@ def verify_text_in_all_items(demopage_obj, text_item, logger):
         f"Read only field text: {required_texts[1]}, "
         f"Paragraph text: {required_texts[2]}"
     )
+
+    # Verify that the text item exists in all the required texts
     return all(text_item in text_elem for text_elem in required_texts)
 
 
-def verify_displayed_progress_value(demopage, log, expected_value):
-    detected_progress_value = demopage.read_progress_bar_value()
-    expected_progress_value = expected_value
+def verify_displayed_progress_value(demopage_obj, log, expected_progress_value):
+    """
+    Local method used to verify that the progress value is correctly displayed
+
+    :param demopage_obj: the demopage class used to execute page operations
+    :param log: the logging object used to log the messages
+    :param expected_progress_value: (str) text containing the expected value
+    :return: (bool) verification result
+    """
+
+    # Read the displayed progress value
+    detected_progress_value = demopage_obj.read_progress_bar_value()
     log_msg = f"Detected value: {detected_progress_value}, expecting value: {expected_progress_value}"
     log.info(log_msg)
+
+    # Verify that the detected and expected values match
     return detected_progress_value == expected_progress_value
 
 
@@ -139,7 +154,6 @@ class TestDemoPage(BaseClass):
         if log.level == logging.DEBUG:
             time.sleep(3)
 
-    @pytest.mark.xfail
     def test_drag_and_drop(self):
         """
         Test case used to verify the functionality of the CheckBox
@@ -160,9 +174,7 @@ class TestDemoPage(BaseClass):
         log.info(verif_msg)
         if log.level == logging.DEBUG:
             time.sleep(3)
-        assert verif_response is True, log.error(
-            f"Response: {verif_msg}; Known Issue: Java handler implementation required for this operation"
-        )
+        assert verif_response is True, log.error(f"Wrong response: {verif_msg}")
 
     def test_iframe_switch(self):
         """
@@ -202,7 +214,7 @@ class TestDemoPage(BaseClass):
             f"Progress not correctly registered"
         )
 
-        # Move the input slider control 
+        # Move the input slider control
         demopage.move_slider_control()
         if log.level == logging.DEBUG:
             time.sleep(3)

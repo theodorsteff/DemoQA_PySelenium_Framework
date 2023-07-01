@@ -16,3 +16,70 @@
 2023-06-19 22:22:26,753 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
 2023-06-19 22:22:29,896 :INFO : test_input_slider_control :Detected value: 50%, expecting value: 50%
 2023-06-19 22:22:33,464 :INFO : test_input_slider_control :Detected value: 80%, expecting value: 80%
+2023-07-01 15:02:32,155 :INFO : test_color_change_demo :Received data is: {'color': 'Green', 'text_input': '1st test', 'pre_filled_input': 'Color change not required', 'color_to_change': False}
+2023-07-01 15:02:33,168 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+2023-07-01 15:02:35,244 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:02:35,279 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:02:38,281 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:02:38,281 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:02:38,722 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:02:38,722 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:02:40,754 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:02:40,754 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:02:40,843 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:02:40,843 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:02:44,546 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+2023-07-01 15:03:18,665 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
+2023-07-01 15:03:21,793 :INFO : test_input_slider_control :Detected value: 50%, expecting value: 50%
+2023-07-01 15:03:25,357 :INFO : test_input_slider_control :Detected value: 80%, expecting value: 80%
+2023-07-01 15:13:10,283 :INFO : test_color_change_demo :Received data is: {'color': 'Green', 'text_input': '1st test', 'pre_filled_input': 'Color change not required', 'color_to_change': False}
+2023-07-01 15:13:11,133 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+2023-07-01 15:13:13,190 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:13:13,226 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:13:16,228 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:13:16,228 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:13:16,654 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:13:16,654 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:13:18,697 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:13:18,697 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:13:18,776 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:13:18,776 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:13:22,605 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+2023-07-01 15:13:26,137 :INFO : test_drag_and_drop :Item in correct position
+2023-07-01 15:13:29,422 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
+2023-07-01 15:13:32,564 :INFO : test_input_slider_control :Detected value: 50%, expecting value: 50%
+2023-07-01 15:13:36,140 :INFO : test_input_slider_control :Detected value: 80%, expecting value: 80%
+2023-07-01 15:31:21,825 :INFO : test_color_change_demo :Received data is: {'color': 'Green', 'text_input': '1st test', 'pre_filled_input': 'Color change not required', 'color_to_change': False}
+2023-07-01 15:31:22,791 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+2023-07-01 15:31:24,856 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:31:24,889 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:31:27,890 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:31:27,890 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:31:28,261 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:31:28,261 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:31:30,302 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:31:30,302 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:31:30,374 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:31:30,374 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:31:34,110 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+2023-07-01 15:31:37,691 :INFO : test_drag_and_drop :Item in correct position
+2023-07-01 15:31:40,974 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
+2023-07-01 15:31:44,131 :INFO : test_input_slider_control :Detected value: 50%, expecting value: 50%
+2023-07-01 15:31:47,695 :INFO : test_input_slider_control :Detected value: 80%, expecting value: 80%
+2023-07-01 15:51:07,968 :INFO : test_color_change_demo :Received data is: {'color': 'Green', 'text_input': '1st test', 'pre_filled_input': 'Color change not required', 'color_to_change': False}
+2023-07-01 15:51:08,997 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+2023-07-01 15:51:11,048 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:51:11,084 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:51:14,088 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:51:14,088 :INFO : test_color_change_demo :Received data is: {'color': 'Purple', 'text_input': '2nd test', 'pre_filled_input': 'Color change required', 'color_to_change': True}
+2023-07-01 15:51:14,521 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:51:14,521 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2023-07-01 15:51:16,560 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:51:16,560 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2023-07-01 15:51:16,634 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:51:16,634 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2023-07-01 15:51:20,369 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+2023-07-01 15:51:23,818 :INFO : test_drag_and_drop :Item in correct position
+2023-07-01 15:51:27,099 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
+2023-07-01 15:51:30,245 :INFO : test_input_slider_control :Detected value: 50%, expecting value: 50%
+2023-07-01 15:51:33,844 :INFO : test_input_slider_control :Detected value: 80%, expecting value: 80%

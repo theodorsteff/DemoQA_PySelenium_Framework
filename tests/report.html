@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 19-Jun-2023 at 22:32:38 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 01-Jul-2023 at 15:51:33 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,8 +269,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>6 tests ran in 27.06 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">1 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>6 tests ran in 27.40 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">6 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -281,66 +281,64 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="xfailed results-table-row">
-        <tr>
-          <td class="col-result">XFailed</td>
-          <td class="col-name">test_demopage.py::TestDemoPage::test_drag_and_drop</td>
-          <td class="col-duration">3.25</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div><div><img src="test_demopage.py_TestDemoPage_test_drag_and_drop.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="log">self = &lt;tests.test_demopage.TestDemoPage object at 0x00000198034FD550&gt;<br/><br/>    @pytest.mark.xfail<br/>    def test_drag_and_drop(self):<br/>        &quot;&quot;&quot;<br/>        Test case used to verify the functionality of the CheckBox<br/>        (revealing of the &quot;Drag and Drop&quot; fields on the page) and the<br/>        &quot;Drag and Drop&quot; operation.<br/>        (NOTE) Known issue: Java handler implementation required for this operation<br/>        &quot;&quot;&quot;<br/>    <br/>        # Instantiate the logger and the DemoPage<br/>        log = self.get_logger()<br/>        demopage = DemoPage(self.driver)<br/>    <br/>        # Click on the checkbox<br/>        demopage.click_checkbox()<br/>    <br/>        # Verify the drag and drop result and assert an error if the operation fails<br/>        verif_response, verif_msg = demopage.drag_and_drop_picture()<br/>        log.info(verif_msg)<br/>        if log.level == logging.DEBUG:<br/>            time.sleep(3)<br/>&gt;       assert verif_response is True, log.error(<br/>            f&quot;Response: {verif_msg}; Known Issue: Java handler implementation required for this operation&quot;<br/>        )<br/><span class="error">E       AssertionError: None</span><br/><span class="error">E       assert False is True</span><br/><br/>test_demopage.py:163: AssertionError<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     test_drag_and_drop:test_demopage.py:160 Draggable item not in the expected range: range(592, 602)
-ERROR    test_drag_and_drop:test_demopage.py:165 Response: Draggable item not in the expected range: range(592, 602); Known Issue: Java handler implementation required for this operation<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_color_change_demo[get_data0]</td>
-          <td class="col-duration">7.29</td>
+          <td class="col-duration">7.54</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:66 Received data is: {&#x27;color&#x27;: &#x27;Green&#x27;, &#x27;text_input&#x27;: &#x27;1st test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change not required&#x27;, &#x27;color_to_change&#x27;: False}
-INFO     test_color_change_demo:test_demopage.py:88 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
-INFO     test_color_change_demo:test_demopage.py:36 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-INFO     test_color_change_demo:test_demopage.py:36 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:81 Received data is: {&#x27;color&#x27;: &#x27;Green&#x27;, &#x27;text_input&#x27;: &#x27;1st test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change not required&#x27;, &#x27;color_to_change&#x27;: False}
+INFO     test_color_change_demo:test_demopage.py:103 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_color_change_demo[get_data1]</td>
-          <td class="col-duration">5.48</td>
+          <td class="col-duration">5.54</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:66 Received data is: {&#x27;color&#x27;: &#x27;Purple&#x27;, &#x27;text_input&#x27;: &#x27;2nd test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change required&#x27;, &#x27;color_to_change&#x27;: True}
-INFO     test_color_change_demo:test_demopage.py:88 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
-INFO     test_color_change_demo:test_demopage.py:36 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-INFO     test_color_change_demo:test_demopage.py:36 Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:81 Received data is: {&#x27;color&#x27;: &#x27;Purple&#x27;, &#x27;text_input&#x27;: &#x27;2nd test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change required&#x27;, &#x27;color_to_change&#x27;: True}
+INFO     test_color_change_demo:test_demopage.py:103 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_hover_select_by_text</td>
-          <td class="col-duration">3.72</td>
+          <td class="col-duration">3.73</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_hover_select_by_text:test_demopage.py:128 Selected Option text: Link Two, Dynamic subhead title: Link Two Selected<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_hover_select_by_text:test_demopage.py:143 Selected Option text: Link Two, Dynamic subhead title: Link Two Selected<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_demopage.py::TestDemoPage::test_drag_and_drop</td>
+          <td class="col-duration">3.44</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_drag_and_drop:test_demopage.py:174 Item in correct position<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_iframe_switch</td>
-          <td class="col-duration">3.27</td>
+          <td class="col-duration">3.28</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_iframe_switch:test_demopage.py:180 Detected iFrame2 text as expected, iFrame3 checkbox clicked<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_iframe_switch:test_demopage.py:192 Detected iFrame2 text as expected, iFrame3 checkbox clicked<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_input_slider_control</td>
-          <td class="col-duration">3.84</td>
+          <td class="col-duration">3.80</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_input_slider_control:test_demopage.py:48 Detected value: 50%, expecting value: 50%
-INFO     test_input_slider_control:test_demopage.py:48 Detected value: 80%, expecting value: 80%<br/></div></td></tr></tbody></table></body></html>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_input_slider_control:test_demopage.py:61 Detected value: 50%, expecting value: 50%
+INFO     test_input_slider_control:test_demopage.py:61 Detected value: 80%, expecting value: 80%<br/></div></td></tr></tbody></table></body></html>

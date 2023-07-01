@@ -13,7 +13,6 @@ a string to a specific text box).
 
 import os
 
-from selenium.common import NoAlertPresentException
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
@@ -215,39 +214,73 @@ class DemoPage:
         :return: (bool, str) Verification that the draggable item is
         in the correct position
         """
+
+        # Read the locator hook for the element to be dragged
         draggable_elem = self.locator_elements["draggable_item"]["locator_hook"]
+
+        # Set up a web driver wait procedure, based on the visibility of the element condition
         wait = WebDriverWait(self.driver, 3)
         wait.until(
             expected_conditions.visibility_of_element_located(
                 (By.CSS_SELECTOR, draggable_elem)
             )
         )
+
+        # Identify the source and target zones
         source_zone = self.driver.find_element(
             By.CSS_SELECTOR, self.locator_elements["dropzone_1"]["locator_hook"]
         )
         target_zone = self.driver.find_element(
             By.CSS_SELECTOR, self.locator_elements["dropzone_2"]["locator_hook"]
         )
+
+        # Identify the item to be dragged
         draggable_item = self.driver.find_element(By.CSS_SELECTOR, draggable_elem)
+
+        # Verify that the item is located in the source zone
         verification_flag, verification_msg = self.verify_draggable_item_position(
             draggable_item, source_zone
         )
+
+        # If the above verification results in a false flag, stop execution and return the result
         if not verification_flag:
             return verification_flag, verification_msg
 
-        # Java handler required for the drag and drop operation in this case
-        try:
-            self.actions.click_and_hold(draggable_item).move_to_element(
-                target_zone
-            ).release(target_zone).perform()
-            alert = self.driver.switch_to.alert()  # xpath throws an exception sometimes
-            alert.accept()
-        except NoAlertPresentException:
-            pass
+        self.driver.set_script_timeout(2)
+
+        # Load the jQuery helper
+        with open("..\\utilities\\jquery_load_helper.js") as f:
+            load_jquery_js = f.read()
+            f.close()
+        with open("..\\utilities\\jquery_load_helper.js") as f:
+            load_jquery_lines = f.readlines()
+            f.close()
+        jquery_url = ""
+        for jquery_line in load_jquery_lines:
+            if "jqueryUrl =" in jquery_line:
+                jquery_url = jquery_line.split("= ")[-1].split(";")[0].replace("'", "")
+
+        # Load the jQuery
+        self.driver.execute_async_script(load_jquery_js, jquery_url)
+
+        # Load the javascript drag and drop helper
+        with open("..\\utilities\\drag_and_drop_helper.js") as f:
+            drag_and_drop_js = f.read()
+
+        # Perform the drag and drop action
+        self.driver.execute_script(
+            drag_and_drop_js + "$('#logo').simulateDragDrop({ dropTarget: '#drop2'});"
+        )
+
+        # Identify the item to be dragged
         draggable_item = self.driver.find_element(By.CSS_SELECTOR, draggable_elem)
+
+        # Verify that the item is located in the target zone
         verification_flag, verification_msg = self.verify_draggable_item_position(
             draggable_item, target_zone
         )
+
+        # Return the result
         return verification_flag, verification_msg
 
     def switch_to_iframes(self):
