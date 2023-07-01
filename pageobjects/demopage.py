@@ -13,6 +13,7 @@ a string to a specific text box).
 
 import os
 
+from selenium.common import NoAlertPresentException
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
@@ -215,7 +216,7 @@ class DemoPage:
         in the correct position
         """
         draggable_elem = self.locator_elements["draggable_item"]["locator_hook"]
-        wait = WebDriverWait(self.driver, 10)
+        wait = WebDriverWait(self.driver, 3)
         wait.until(
             expected_conditions.visibility_of_element_located(
                 (By.CSS_SELECTOR, draggable_elem)
@@ -235,7 +236,14 @@ class DemoPage:
             return verification_flag, verification_msg
 
         # Java handler required for the drag and drop operation in this case
-        # self.actions.drag_and_drop(draggable_item, target_zone).perform()
+        try:
+            self.actions.click_and_hold(draggable_item).move_to_element(
+                target_zone
+            ).release(target_zone).perform()
+            alert = self.driver.switch_to.alert()  # xpath throws an exception sometimes
+            alert.accept()
+        except NoAlertPresentException:
+            pass
         draggable_item = self.driver.find_element(By.CSS_SELECTOR, draggable_elem)
         verification_flag, verification_msg = self.verify_draggable_item_position(
             draggable_item, target_zone
