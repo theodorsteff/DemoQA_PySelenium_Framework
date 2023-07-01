@@ -227,12 +227,10 @@ class DemoPage:
         )
 
         # Identify the source and target zones
-        source_zone = self.driver.find_element(
-            By.CSS_SELECTOR, self.locator_elements["dropzone_1"]["locator_hook"]
-        )
-        target_zone = self.driver.find_element(
-            By.CSS_SELECTOR, self.locator_elements["dropzone_2"]["locator_hook"]
-        )
+        source_elem = self.locator_elements["dropzone_1"]["locator_hook"]
+        source_zone = self.driver.find_element(By.CSS_SELECTOR, source_elem)
+        target_elem = self.locator_elements["dropzone_2"]["locator_hook"]
+        target_zone = self.driver.find_element(By.CSS_SELECTOR, target_elem)
 
         # Identify the item to be dragged
         draggable_item = self.driver.find_element(By.CSS_SELECTOR, draggable_elem)
@@ -268,9 +266,11 @@ class DemoPage:
             drag_and_drop_js = f.read()
 
         # Perform the drag and drop action
-        self.driver.execute_script(
-            drag_and_drop_js + "$('#logo').simulateDragDrop({ dropTarget: '#drop2'});"
+        sim_drag_and_drop_str = "$('%s').simulateDragDrop({ dropTarget: '%s'});" % (
+            draggable_elem,
+            target_elem,
         )
+        self.driver.execute_script(drag_and_drop_js + sim_drag_and_drop_str)
 
         # Identify the item to be dragged
         draggable_item = self.driver.find_element(By.CSS_SELECTOR, draggable_elem)
