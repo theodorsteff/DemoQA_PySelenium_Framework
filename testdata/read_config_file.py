@@ -35,6 +35,14 @@ class ReadConfigFiles:
         """
         return self.data_structure["debug_showcase"]
 
+    def get_demopage_url(self):
+        """
+        Method used to retrieve the demopage URL
+
+        :return: (str) URL of the demopage
+        """
+        return self.data_structure["demopage_url"]
+
     def get_test_data_sets(self):
         """
         Method used to retrieve the data sets to be used for

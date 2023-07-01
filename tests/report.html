@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 01-Jul-2023 at 16:14:35 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 01-Jul-2023 at 20:51:59 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,8 +269,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>6 tests ran in 27.58 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">6 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>9 tests ran in 43.45 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">9 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -285,60 +285,94 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_color_change_demo[get_data0]</td>
-          <td class="col-duration">7.51</td>
+          <td class="col-duration">7.55</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:81 Received data is: {&#x27;color&#x27;: &#x27;Green&#x27;, &#x27;text_input&#x27;: &#x27;1st test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change not required&#x27;, &#x27;color_to_change&#x27;: False}
-INFO     test_color_change_demo:test_demopage.py:103 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:118 Received data is: {&#x27;color&#x27;: &#x27;Green&#x27;, &#x27;text_input&#x27;: &#x27;1st test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change not required&#x27;, &#x27;color_to_change&#x27;: False}
+INFO     test_color_change_demo:test_demopage.py:140 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
 INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
 INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_color_change_demo[get_data1]</td>
-          <td class="col-duration">5.58</td>
+          <td class="col-duration">5.55</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:81 Received data is: {&#x27;color&#x27;: &#x27;Purple&#x27;, &#x27;text_input&#x27;: &#x27;2nd test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change required&#x27;, &#x27;color_to_change&#x27;: True}
-INFO     test_color_change_demo:test_demopage.py:103 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_color_change_demo:test_demopage.py:118 Received data is: {&#x27;color&#x27;: &#x27;Purple&#x27;, &#x27;text_input&#x27;: &#x27;2nd test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change required&#x27;, &#x27;color_to_change&#x27;: True}
+INFO     test_color_change_demo:test_demopage.py:140 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
 INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
 INFO     test_color_change_demo:test_demopage.py:38 Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_hover_select_by_text</td>
-          <td class="col-duration">3.75</td>
+          <td class="col-duration">3.74</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_hover_select_by_text:test_demopage.py:143 Selected Option text: Link Two, Dynamic subhead title: Link Two Selected<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_hover_select_by_text:test_demopage.py:180 Selected Option text: Link Two, Dynamic subhead title: Link Two Selected<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_drag_and_drop</td>
-          <td class="col-duration">3.55</td>
+          <td class="col-duration">3.57</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_drag_and_drop:test_demopage.py:174 Item in correct position<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_drag_and_drop:test_demopage.py:211 Item in correct position<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_iframe_switch</td>
-          <td class="col-duration">3.32</td>
+          <td class="col-duration">3.28</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_iframe_switch:test_demopage.py:192 Detected iFrame2 text as expected, iFrame3 checkbox clicked<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_iframe_switch:test_demopage.py:229 Detected iFrame2 text as expected, iFrame3 checkbox clicked<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_input_slider_control</td>
-          <td class="col-duration">3.80</td>
+          <td class="col-duration">3.74</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_input_slider_control:test_demopage.py:61 Detected value: 50%, expecting value: 50%
-INFO     test_input_slider_control:test_demopage.py:61 Detected value: 80%, expecting value: 80%<br/></div></td></tr></tbody></table></body></html>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_input_slider_control:test_demopage.py:76 Detected value: (&#x27;50%&#x27;, &#x27;50&#x27;), expecting value: (&#x27;50%&#x27;, &#x27;50&#x27;)
+INFO     test_input_slider_control:test_demopage.py:76 Detected value: (&#x27;80%&#x27;, &#x27;80&#x27;), expecting value: (&#x27;80%&#x27;, &#x27;80&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_demopage.py::TestDemoPage::test_select_dropdown_by_partial_text</td>
+          <td class="col-duration">6.39</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_select_dropdown_by_partial_text:test_demopage.py:76 Detected value: (&#x27;Set to 25%&#x27;, &#x27;25%&#x27;, &#x27;0.25&#x27;), expecting value: (&#x27;Set to 25%&#x27;, &#x27;25%&#x27;, &#x27;0.25&#x27;)
+INFO     test_select_dropdown_by_partial_text:test_demopage.py:335 Selected Option value: 75%
+INFO     test_select_dropdown_by_partial_text:test_demopage.py:76 Detected value: (&#x27;Set to 75%&#x27;, &#x27;75%&#x27;, &#x27;0.75&#x27;), expecting value: (&#x27;Set to 75%&#x27;, &#x27;75%&#x27;, &#x27;0.75&#x27;)<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_demopage.py::TestDemoPage::test_html_svg_rectangle</td>
+          <td class="col-duration">3.19</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_html_svg_rectangle:test_demopage.py:371 Maximum HTML SVG rectangle width: 154.0
+INFO     test_html_svg_rectangle:test_demopage.py:376 Initial HTML SVG rectangle width: 154.0
+INFO     test_html_svg_rectangle:test_demopage.py:384 Modified HTML SVG rectangle width: 3.45856<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_demopage.py::TestDemoPage::test_radio_button_selection</td>
+          <td class="col-duration">6.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_radio_button_selection:test_demopage.py:97 Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: True)
+INFO     test_radio_button_selection:test_demopage.py:97 Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: False)
+INFO     test_radio_button_selection:test_demopage.py:97 Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: False)
+INFO     test_radio_button_selection:test_demopage.py:97 Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: True)<br/></div></td></tr></tbody></table></body></html>
