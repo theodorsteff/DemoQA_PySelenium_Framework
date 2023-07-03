@@ -13,8 +13,9 @@ In order to install the required packages, please follow the *pip install* comma
 ### selenium
 `» pip install selenium`  
 
-The project uses the sqlite3 extension module, in order to read from the "demopage_data" database.    
-For test suite execution, change the folder path to the "tests" folder of the project and use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases)    
+The project uses the sqlite3 python extension module, in order to read from the "demopage_data" database. For a convenient way to visualize the content of the database, please use the "DB Browser for SQLite" available for download at the following link: https://sqlitebrowser.org/dl/    
+    
+For test suite execution, change the folder path to the "tests" folder of the project and use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases).    
 `» cd <DemoQA_PySelenium_Framework directory>\tests`  
 `» py.test --html report.html` 
 
