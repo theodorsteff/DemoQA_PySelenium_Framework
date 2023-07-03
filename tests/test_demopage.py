@@ -208,10 +208,11 @@ class TestDemoPage(BaseClass):
 
         # Verify the drag and drop result and assert an error if the operation fails
         verif_response, verif_msg = demopage.drag_and_drop_picture()
-        log.info(verif_msg)
+        for log_msg in verif_msg:
+            log.info(log_msg)
         if log.level == logging.DEBUG:
             time.sleep(3)
-        assert verif_response is True, log.error(f"Wrong response: {verif_msg}")
+        assert verif_response is True, log.error("Drag and drop action failed")
 
     def test_iframe_switch(self):
         """
@@ -284,7 +285,7 @@ class TestDemoPage(BaseClass):
             "Progress not correctly registered"
         )
 
-    def test_select_dropdown_by_partial_text(self):
+    def test_select_dropdown_by_option_value(self):
         """
         Test case used to verify the select dropdown menu functionality.
         """

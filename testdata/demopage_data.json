@@ -18,109 +18,136 @@
   ],
   "locators": {
     "text_input_field": {
-      "clear_required": false,
       "locator_hook": "#myTextInput",
-      "locator_type": "CSS_SELECTOR"
+      "locator_type": "CSS_SELECTOR",
+      "clear_required": false
     },
     "pre_filled_text_field": {
-      "clear_required": true,
       "locator_hook": "#myTextInput2",
-      "locator_type": "CSS_SELECTOR"
+      "locator_type": "CSS_SELECTOR",
+      "clear_required": true
     },
     "placeholder_text_field": {
-      "clear_required": false,
       "locator_hook": "#placeholderText",
-      "locator_type": "CSS_SELECTOR"
+      "locator_type": "CSS_SELECTOR",
+      "clear_required": false
     },
     "text_area": {
-      "clear_required": false,
       "locator_hook": "#myTextarea",
-      "locator_type": "CSS_SELECTOR"
+      "locator_type": "CSS_SELECTOR",
+      "clear_required": false
     },
     "button": {
-      "locator_hook": "//*[@id='myButton']"
+      "locator_hook": "//*[@id='myButton']",
+      "locator_type": "XPATH"
     },
     "read_only_text_field": {
-      "locator_hook": "//*[@id='readOnlyText']"
+      "locator_hook": "//*[@id='readOnlyText']",
+      "locator_type": "XPATH"
     },
     "paragraph_with_text": {
-      "locator_hook": "//*[@id='pText']"
+      "locator_hook": "//*[@id='pText']",
+      "locator_type": "XPATH"
     },
     "checkbox": {
-      "locator_hook": "#checkBox1"
+      "locator_hook": "#checkBox1",
+      "locator_type": "CSS_SELECTOR"
     },
     "hover_dropdown": {
       "locator_hook": "#myDropdown",
-      "hover_option_text": "Link Two"
+      "locator_type": "CSS_SELECTOR"
+    },
+    "hover_option_text": {
+      "locator_hook": "Link Two",
+      "locator_type": "LINK_TEXT"
     },
     "dynamic_subhead": {
-      "locator_hook": "#tbodyId > tr:nth-child(1) > td:nth-child(4) > h3"
+      "locator_hook": "#tbodyId > tr:nth-child(1) > td:nth-child(4) > h3",
+      "locator_type": "CSS_SELECTOR"
     },
     "draggable_item": {
-      "locator_hook": "#logo"
+      "locator_hook": "#logo",
+      "locator_type": "CSS_SELECTOR"
     },
     "dropzone_1": {
-      "locator_hook": "#drop1"
+      "locator_hook": "#drop1",
+      "locator_type": "CSS_SELECTOR"
     },
     "dropzone_2": {
-      "locator_hook": "#drop2"
+      "locator_hook": "#drop2",
+      "locator_type": "CSS_SELECTOR"
     },
     "iframe2": {
       "iframe_name": "myFrame2",
-      "iframe_body": "body > h4",
+      "locator_hook": "body > h4",
+      "locator_type": "CSS_SELECTOR",
       "iframe_expected_text": "iFrame Text"
     },
     "iframe3": {
       "iframe_name": "myFrame3",
-      "iframe_checkbox": "#checkBox6"
+      "locator_hook": "#checkBox6",
+      "locator_type": "CSS_SELECTOR"
     },
     "progress_bar": {
       "locator_hook": "progressBar",
+      "locator_type": "ID",
       "start_progress_value": "50",
       "end_progress_value": "80"
     },
     "progress_label": {
       "locator_hook": "progressLabel",
+      "locator_type": "ID",
       "start_progress_value": "50%",
       "end_progress_value": "80%"
     },
     "input_slider_control": {
       "locator_hook": "mySlider",
+      "locator_type": "ID",
       "object_type": "slider",
       "x_offset": 40,
       "y_offset": 0
     },
     "meter_bar": {
       "locator_hook": "meterBar",
+      "locator_type": "ID",
       "start_progress_value": "0.25",
       "end_progress_value": "0.75"
     },
     "meter_label": {
       "locator_hook": "meterLabel",
+      "locator_type": "ID",
       "start_progress_value": "25%",
       "end_progress_value": "75%"
     },
     "select_dropdown": {
       "locator_hook": "#mySelect",
+      "locator_type": "CSS_SELECTOR",
       "object_type": "dropdown",
       "start_progress_value": "Set to 25%",
       "end_progress_value": "Set to 75%"
     },
     "html_svg_rect": {
       "locator_hook": "#svgRect",
+      "locator_type": "CSS_SELECTOR",
       "max_width_px": "154px"
     },
     "radio_button1": {
       "locator_hook": "radioButton1",
+      "locator_type": "ID",
       "is_displayed": true,
       "is_enabled": true,
       "is_selected": true
     },
     "radio_button2": {
       "locator_hook": "radioButton2",
+      "locator_type": "ID",
       "is_displayed": true,
       "is_enabled": true,
       "is_selected": false
+    },
+    "test_elem": {
+      "locator_hook": "#tbodyId > tr:nth-child(1) > td:nth-child(4) > h3",
+      "locator_type": "CSS_SELECTOR"
     }
   }
 }
