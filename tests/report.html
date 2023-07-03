@@ -241,9 +241,9 @@ function filter_table(elem) {
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 03-Jul-2023 at 15:04:12 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
+    <p>Report generated on 04-Jul-2023 at 00:29:15 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.0.1</p>
     <h2>Summary</h2>
-    <p>9 tests ran in 45.27 seconds. </p>
+    <p>9 tests ran in 43.18 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">9 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -259,96 +259,105 @@ function filter_table(elem) {
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_color_change_demo[get_data0]</td>
-          <td class="col-duration">6.16</td>
+          <td class="col-duration">5.87</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_color_change_demo:test_demopage.py:118 Received data is: {&#x27;color&#x27;: &#x27;Green&#x27;, &#x27;text_input&#x27;: &#x27;1st test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change not required&#x27;, &#x27;color_to_change&#x27;: False}
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_color_change_demo:test_demopage.py:118 Received data is: (&#x27;Green&#x27;, &#x27;1st test&#x27;, &#x27;Color change not required&#x27;, 0)
 [32mINFO    [0m test_color_change_demo:test_demopage.py:140 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
 [32mINFO    [0m test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-[32mINFO    [0m test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green<br/></div></td></tr></tbody>
+[32mINFO    [0m test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+[32mINFO    [0m test_color_change_demo:test_demopage.py:165 Green color change demo testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_color_change_demo[get_data1]</td>
-          <td class="col-duration">5.56</td>
+          <td class="col-duration">5.52</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_color_change_demo:test_demopage.py:118 Received data is: {&#x27;color&#x27;: &#x27;Purple&#x27;, &#x27;text_input&#x27;: &#x27;2nd test&#x27;, &#x27;pre_filled_input&#x27;: &#x27;Color change required&#x27;, &#x27;color_to_change&#x27;: True}
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_color_change_demo:test_demopage.py:118 Received data is: (&#x27;Purple&#x27;, &#x27;2nd test&#x27;, &#x27;Color change required&#x27;, 1)
 [32mINFO    [0m test_color_change_demo:test_demopage.py:140 Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
 [32mINFO    [0m test_color_change_demo:test_demopage.py:38 Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-[32mINFO    [0m test_color_change_demo:test_demopage.py:38 Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple<br/></div></td></tr></tbody>
+[32mINFO    [0m test_color_change_demo:test_demopage.py:38 Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+[32mINFO    [0m test_color_change_demo:test_demopage.py:165 Purple color change demo testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_hover_select_by_text</td>
-          <td class="col-duration">3.73</td>
+          <td class="col-duration">3.72</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_hover_select_by_text:test_demopage.py:180 Selected Option text: Link Two, Dynamic subhead title: Link Two Selected<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_hover_select_by_text:test_demopage.py:183 Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+[32mINFO    [0m test_hover_select_by_text:test_demopage.py:198 Link Two identified, testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_drag_and_drop</td>
-          <td class="col-duration">3.59</td>
+          <td class="col-duration">3.54</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_drag_and_drop:test_demopage.py:212 Draggable item in expected range: range(221, 231)
-[32mINFO    [0m test_drag_and_drop:test_demopage.py:212 Drag and drop action performed
-[32mINFO    [0m test_drag_and_drop:test_demopage.py:212 Draggable item in expected range: range(592, 602)<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_drag_and_drop:test_demopage.py:218 Draggable item in expected range: range(221, 231)
+[32mINFO    [0m test_drag_and_drop:test_demopage.py:218 Drag and drop action performed
+[32mINFO    [0m test_drag_and_drop:test_demopage.py:218 Draggable item in expected range: range(592, 602)
+[32mINFO    [0m test_drag_and_drop:test_demopage.py:224 Drag and drop action executed, testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_iframe_switch</td>
-          <td class="col-duration">3.30</td>
+          <td class="col-duration">3.27</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_iframe_switch:test_demopage.py:230 Detected iFrame2 text as expected, iFrame3 checkbox clicked<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_iframe_switch:test_demopage.py:239 Detected iFrame2 text as expected, iFrame3 checkbox clicked
+[32mINFO    [0m test_iframe_switch:test_demopage.py:245 iFrame switches executed, testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_input_slider_control</td>
-          <td class="col-duration">3.77</td>
+          <td class="col-duration">3.74</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_input_slider_control:test_demopage.py:76 Detected value: (&#x27;50%&#x27;, &#x27;50&#x27;), expecting value: (&#x27;50%&#x27;, &#x27;50&#x27;)
-[32mINFO    [0m test_input_slider_control:test_demopage.py:76 Detected value: (&#x27;80%&#x27;, &#x27;80&#x27;), expecting value: (&#x27;80%&#x27;, &#x27;80&#x27;)<br/></div></td></tr></tbody>
+[32mINFO    [0m test_input_slider_control:test_demopage.py:76 Detected value: (&#x27;80%&#x27;, &#x27;80&#x27;), expecting value: (&#x27;80%&#x27;, &#x27;80&#x27;)
+[32mINFO    [0m test_input_slider_control:test_demopage.py:300 Progress correctly registered, testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_select_dropdown_by_option_value</td>
-          <td class="col-duration">6.42</td>
+          <td class="col-duration">6.39</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_select_dropdown_by_option_value:test_demopage.py:76 Detected value: (&#x27;Set to 25%&#x27;, &#x27;25%&#x27;, &#x27;0.25&#x27;), expecting value: (&#x27;Set to 25%&#x27;, &#x27;25%&#x27;, &#x27;0.25&#x27;)
-[32mINFO    [0m test_select_dropdown_by_option_value:test_demopage.py:336 Selected Option value: 75%
-[32mINFO    [0m test_select_dropdown_by_option_value:test_demopage.py:76 Detected value: (&#x27;Set to 75%&#x27;, &#x27;75%&#x27;, &#x27;0.75&#x27;), expecting value: (&#x27;Set to 75%&#x27;, &#x27;75%&#x27;, &#x27;0.75&#x27;)<br/></div></td></tr></tbody>
+[32mINFO    [0m test_select_dropdown_by_option_value:test_demopage.py:350 Selected Option value: 75%
+[32mINFO    [0m test_select_dropdown_by_option_value:test_demopage.py:76 Detected value: (&#x27;Set to 75%&#x27;, &#x27;75%&#x27;, &#x27;0.75&#x27;), expecting value: (&#x27;Set to 75%&#x27;, &#x27;75%&#x27;, &#x27;0.75&#x27;)
+[32mINFO    [0m test_select_dropdown_by_option_value:test_demopage.py:374 Progress correctly registered, testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_html_svg_rectangle</td>
-          <td class="col-duration">3.28</td>
+          <td class="col-duration">3.19</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:372 Maximum HTML SVG rectangle width: 154.0
-[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:377 Initial HTML SVG rectangle width: 154.0
-[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:385 Modified HTML SVG rectangle width: 3.61049<br/></div></td></tr></tbody>
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:389 Maximum HTML SVG rectangle width: 154.0
+[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:394 Initial HTML SVG rectangle width: 154.0
+[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:402 Modified HTML SVG rectangle width: 3.45443
+[32mINFO    [0m test_html_svg_rectangle:test_demopage.py:408 HTML SVG Rectangle width changed, testcase succeeded<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_demopage.py::TestDemoPage::test_radio_button_selection</td>
-          <td class="col-duration">6.34</td>
+          <td class="col-duration">6.33</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m test_radio_button_selection:test_demopage.py:97 Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: True)
 [32mINFO    [0m test_radio_button_selection:test_demopage.py:97 Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: False)
 [32mINFO    [0m test_radio_button_selection:test_demopage.py:97 Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: False)
-[32mINFO    [0m test_radio_button_selection:test_demopage.py:97 Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: True)<br/></div></td></tr></tbody></table></body></html>
+[32mINFO    [0m test_radio_button_selection:test_demopage.py:97 Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: True)
+[32mINFO    [0m test_radio_button_selection:test_demopage.py:487 Radio buttons selection changed, testcase succeeded<br/></div></td></tr></tbody></table></body></html>

@@ -2,6 +2,7 @@
 #
 # Demo Project: Selenium testing framework implementation with Python
 # Showcase implementation by: Theodor-Stefan Baca
+# Version 1.0
 #
 
 """
@@ -9,12 +10,11 @@ Description:
 This module defines the class for the testcases to be executed.
 """
 
-import logging
 import time
 import pytest
 
 from testdata.demopage_data import DemoPageData
-from pageobjects.demopage import DemoPage
+from pageobjects.demopage import DemoPage, database_path
 from utilities.baseclass import BaseClass
 
 
@@ -120,10 +120,10 @@ class TestDemoPage(BaseClass):
 
         # Set up the test data
         color_name, text_input, pre_filled_input, color_to_change = (
-            get_data["color"],
-            get_data["text_input"],
-            get_data["pre_filled_input"],
-            get_data["color_to_change"],
+            get_data[0],
+            get_data[1],
+            get_data[2],
+            get_data[3],
         )
 
         # Execute the text inject operations
@@ -161,6 +161,9 @@ class TestDemoPage(BaseClass):
         if demopage.get_debug_showcase():
             time.sleep(3)
 
+        # Log success message
+        log.info(f"{color_name} color change demo testcase succeeded")
+
     def test_hover_select_by_text(self):
         """
         Test case used to verify the hover menu functionality.
@@ -188,8 +191,11 @@ class TestDemoPage(BaseClass):
         )
 
         # If the logging level is set to DEBUG, sleep for a few seconds
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
+
+        # Log success message
+        log.info(f"{selected_text} identified, testcase succeeded")
 
     def test_drag_and_drop(self):
         """
@@ -210,9 +216,12 @@ class TestDemoPage(BaseClass):
         verif_response, verif_msg = demopage.drag_and_drop_picture()
         for log_msg in verif_msg:
             log.info(log_msg)
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
         assert verif_response is True, log.error("Drag and drop action failed")
+
+        # Log success message
+        log.info("Drag and drop action executed, testcase succeeded")
 
     def test_iframe_switch(self):
         """
@@ -228,9 +237,12 @@ class TestDemoPage(BaseClass):
         # assert if operation fails
         verification_response, verification_msg = demopage.switch_to_iframes()
         log.info(verification_msg)
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
         assert verification_response is True, log.error(verification_msg)
+
+        # Log success message
+        log.info("iFrame switches executed, testcase succeeded")
 
     def test_input_slider_control(self):
         """
@@ -242,7 +254,7 @@ class TestDemoPage(BaseClass):
         log = self.get_logger()
         demopage = DemoPage(self.driver)
 
-        # Retrieve the initial progress label and bar valus=es
+        # Retrieve the initial progress label and bar values
         object_data = demopage.get_slider_data()
         object_type = object_data["object_type"]
         progress_label_data = demopage.get_progress_label_data()
@@ -266,7 +278,7 @@ class TestDemoPage(BaseClass):
         demopage.move_slider_control()
 
         # If the logging level is set to DEBUG, sleep for a few seconds
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
 
         # Retrieve the final progress label and bar values
@@ -284,6 +296,8 @@ class TestDemoPage(BaseClass):
         assert progress_registered is True, log.error(
             "Progress not correctly registered"
         )
+        # Log success message
+        log.info("Progress correctly registered, testcase succeeded")
 
     def test_select_dropdown_by_option_value(self):
         """
@@ -297,7 +311,7 @@ class TestDemoPage(BaseClass):
         # Read the dropdown menu data and displayed selected option
         object_data = demopage.get_select_dropdown_data()
         object_type = object_data["object_type"]
-        expected_dropdown_option = object_data["start_progress_value"]
+        expected_dropdown_option = object_data["custom_field1"]
 
         # Retrieve the initial meter label and bar values
         meter_label_data = demopage.get_meter_label_data()
@@ -322,21 +336,21 @@ class TestDemoPage(BaseClass):
         )
 
         # If the logging level is set to DEBUG, sleep for a few seconds
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
 
         # Click on the select menu and choose on the required option
         selected_option = demopage.select_click_option()
 
         # If the logging level is set to DEBUG, sleep for a few seconds
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
 
         # Log the selected hovering option and the subhead title
         log.info(f"Selected Option value: {selected_option}")
 
         # Retrieve the final progress label and bar values
-        expected_dropdown_option = object_data["end_progress_value"]
+        expected_dropdown_option = object_data["custom_field2"]
         expected_label_value = meter_label_data["end_progress_value"]
         expected_bar_value = meter_bar_data["end_progress_value"]
 
@@ -355,6 +369,9 @@ class TestDemoPage(BaseClass):
         assert progress_registered is True, log.error(
             "Progress not correctly registered"
         )
+
+        # Log success message
+        log.info("Progress correctly registered, testcase succeeded")
 
     def test_html_svg_rectangle(self):
         """
@@ -386,6 +403,9 @@ class TestDemoPage(BaseClass):
         assert html_svg_rect_width < max_width_px, log.error(
             "HTML SVG failed to change its width, responsiveness test failed"
         )
+
+        # Log success message
+        log.info("HTML SVG Rectangle width changed, testcase succeeded")
 
     def test_radio_button_selection(self):
         """
@@ -427,14 +447,14 @@ class TestDemoPage(BaseClass):
         )
 
         # If the logging level is set to DEBUG, sleep for a few seconds
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
 
         # Click on radio button2
         demopage.click_radio_button(radio_button2)
 
         # If the logging level is set to DEBUG, sleep for a few seconds
-        if log.level == logging.DEBUG:
+        if demopage.get_debug_showcase():
             time.sleep(3)
 
         # Retrieve the final expected button1 selection values
@@ -463,7 +483,10 @@ class TestDemoPage(BaseClass):
             f"Button {radio_button2['locator_hook']} selection expected: {expected_button2_values}"
         )
 
-    @pytest.fixture(params=DemoPageData.get_test_data())
+        # Log success message
+        log.info("Radio buttons selection changed, testcase succeeded")
+
+    @pytest.fixture(params=DemoPageData.get_test_data(database_path))
     def get_data(self, request):
         """
         Method used to retrieve test data to be used for multiple

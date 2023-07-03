@@ -2,6 +2,7 @@
 #
 # Demo Project: Selenium testing framework implementation with Python
 # Showcase implementation by: Theodor-Stefan Baca
+# Version 1.0
 #
 
 """

@@ -2,6 +2,7 @@
 #
 # Demo Project: Selenium testing framework implementation with Python
 # Showcase implementation by: Theodor-Stefan Baca
+# Version 1.0
 #
 
 """
@@ -10,7 +11,7 @@ This module reads the configuration data and returns the data sets
 used for multiple executions of a single test.
 """
 
-from testdata.read_config_file import ReadConfigFiles
+import sqlite3
 
 
 class DemoPageData:
@@ -19,12 +20,15 @@ class DemoPageData:
     """
 
     @staticmethod
-    def get_test_data():
+    def get_test_data(database_path):
         """
         Static method used to read the config file and the data sets.
 
-        :return: (list) List of dictionaries consisting of the data sets.
+        :return: (list) List of tuples consisting of the data sets.
         """
-        data_sets_reader = ReadConfigFiles()
-        data_structure = data_sets_reader.get_test_data_sets()
-        return data_structure["data_sets"]
+        demopage_db = sqlite3.connect(database_path)
+        cursor_object = demopage_db.cursor()
+        testcase_name = cursor_object.execute(f"SELECT * FROM repetitive_tests").fetchall()[0][0]
+        data_sets = cursor_object.execute(f"SELECT * FROM {testcase_name}").fetchall()
+        demopage_db.close()
+        return data_sets

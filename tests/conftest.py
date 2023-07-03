@@ -2,6 +2,7 @@
 #
 # Demo Project: Selenium testing framework implementation with Python
 # Showcase implementation by: Theodor-Stefan Baca
+# Version 1.0
 #
 
 """
@@ -12,7 +13,8 @@ This module configures the testing framework.
 import pytest
 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
 
 # Prototype definition and initialization of the driver as an empty object
 driver = None
@@ -35,15 +37,18 @@ def setup(request):
     # to be used by the test class.
     global driver
 
-    # Setting up the path for the selenium drivers to be used
-    service_obj = Service(r"C:\SeleniumDrivers")
-
     # Setting up the browser to be used
     browser_name = request.config.getoption("browser_name")
     if browser_name == "chrome":
-        driver = webdriver.Chrome(service=service_obj)
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("--start-maximized")
+        service_obj = ChromeService(r"C:\SeleniumDrivers")
+        driver = webdriver.Chrome(options=chrome_options, service=service_obj)
     elif browser_name == "firefox":
-        driver = webdriver.Firefox(service=service_obj)
+        firefox_options = webdriver.FirefoxOptions()
+        firefox_options.add_argument("--start-maximized")
+        service_obj = FirefoxService(r"C:\SeleniumDrivers")
+        driver = webdriver.Firefox(options=firefox_options, service=service_obj)
 
     # Passing the driver to the request parameters,
     # in order to be used by the test classes. The driver will be then

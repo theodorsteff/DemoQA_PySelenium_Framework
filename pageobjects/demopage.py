@@ -2,6 +2,7 @@
 #
 # Demo Project: Selenium testing framework implementation with Python
 # Showcase implementation by: Theodor-Stefan Baca
+# Version 1.0
 #
 
 """
@@ -12,13 +13,15 @@ a string to a specific text box).
 """
 
 import os
+import sqlite3
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from testdata.read_config_file import ReadConfigFiles
+
+database_path = "..\\testdata\\demopage_data.db"
 
 
 class DemoPage:
@@ -33,25 +36,63 @@ class DemoPage:
 
         :param driver: (obj) the selenium driver to be used for accessing the URL
         """
-        self.local_demo_page = False
+        # Load the demopage_data database
         self.driver = driver
         self.driver.implicitly_wait(5)
         self.actions = ActionChains(self.driver)
-        self.debug_showcase = ReadConfigFiles().get_debug_showcase()
-        self.demopage_url = ReadConfigFiles().get_demopage_url()
-        self.__locator_elements__ = ReadConfigFiles().get_locators()
+        self.demopage_db = sqlite3.connect(database_path)
+        self.cursor_object = self.demopage_db.cursor()
+        query_result = self.cursor_object.execute("SELECT * FROM general").fetchone()
+        self.demopage_url = query_result[0]
+        self.debug_showcase = bool(query_result[1])
+        self.local_demo_page = bool(query_result[2])
 
         # Load a local html file into the web browser
         if self.local_demo_page:
             dir_path = os.path.dirname(os.path.abspath(__file__))
             par_path = os.path.abspath(os.path.join(dir_path, os.pardir))
-            url_path = os.path.join(par_path, "testdata\\demopage.html")
+            url_path = os.path.join(par_path, query_result[3])
 
         # Load a demo page into the web browser
         else:
             url_path = self.demopage_url
         self.driver.get(url_path)
         self.driver.maximize_window()
+
+    def __del__(self):
+        """
+        De-constructor used to close the previously opened database
+        """
+        self.demopage_db.close()
+
+    def retrieve_record_from_db(
+        self, table_name, record_filter, record_name, field_name
+    ):
+        """
+        Method used to retrieve record data from the sqlite database.
+
+        :param table_name: (str) name of the table where the query has to be executed
+        :param record_filter: (str) filter type to be used for finding the record
+        :param record_name: (str) name of the record data to be found
+        :param field_name: (str) name of the record's field to be retrieved
+        :return: (obj) retrieved record data from the database
+        """
+        current_command = f"""
+            SELECT {field_name} FROM {table_name} WHERE {record_filter}='{record_name}'
+        """
+        return self.cursor_object.execute(current_command)
+
+    def __convert_record_to_dict__(self, query_data):
+        keys_in_record = list()
+        record_as_dict = dict()
+        query_result = self.retrieve_record_from_db(*query_data)
+        for column in query_result.description:
+            keys_in_record.append(f"{column[0]}")
+        query_result = self.retrieve_record_from_db(*query_data)
+        record_data = query_result.fetchone()
+        for key_index, key_name in enumerate(keys_in_record):
+            record_as_dict[key_name] = record_data[key_index]
+        return record_as_dict
 
     def get_debug_showcase(self):
         """
@@ -79,9 +120,9 @@ class DemoPage:
 
         :param text_to_insert: (str) text string to be inserted
         """
-        self.__inject_text_in_box__(
-            text_to_insert, self.__locator_elements__["text_input_field"]
-        )
+        query_data = ("text_fields", "name", "text_input_field", "*")
+        text_input_field = self.__convert_record_to_dict__(query_data)
+        self.__inject_text_in_box__(text_to_insert, text_input_field)
 
     def inject_text_pre_filled_field(self, text_to_insert):
         """
@@ -89,9 +130,9 @@ class DemoPage:
 
         :param text_to_insert: (str) text string to be inserted
         """
-        self.__inject_text_in_box__(
-            text_to_insert, self.__locator_elements__["pre_filled_text_field"]
-        )
+        query_data = ("text_fields", "name", "pre_filled_text_field", "*")
+        pre_filled_text_field = self.__convert_record_to_dict__(query_data)
+        self.__inject_text_in_box__(text_to_insert, pre_filled_text_field)
 
     def inject_text_placeholder_field(self, text_to_insert):
         """
@@ -99,15 +140,13 @@ class DemoPage:
 
         :param text_to_insert: (str) text string to be inserted
         """
-        placeholder_item = self.__locator_handler__(
-            self.__locator_elements__["placeholder_text_field"]
-        )
+        query_data = ("text_fields", "name", "placeholder_text_field", "*")
+        placeholder_text_field = self.__convert_record_to_dict__(query_data)
+        placeholder_item = self.__locator_handler__(placeholder_text_field)
         placeholder_text = self.driver.find_element(*placeholder_item).get_property(
             "placeholder"
         )
-        self.__inject_text_in_box__(
-            text_to_insert, self.__locator_elements__["placeholder_text_field"]
-        )
+        self.__inject_text_in_box__(text_to_insert, placeholder_text_field)
         return placeholder_text
 
     def inject_text_area(self, text_to_insert):
@@ -116,9 +155,9 @@ class DemoPage:
 
         :param text_to_insert: (str) text string to be inserted
         """
-        self.__inject_text_in_box__(
-            text_to_insert, self.__locator_elements__["text_area"]
-        )
+        query_data = ("text_fields", "name", "text_area", "*")
+        text_area = self.__convert_record_to_dict__(query_data)
+        self.__inject_text_in_box__(text_to_insert, text_area)
 
     def __read_item_text__(self, *readable_item):
         """
@@ -133,25 +172,27 @@ class DemoPage:
         """
         Method used to read the text from the dynamic subhead of the page.
         """
-        dynamic_subhead_item = self.__locator_handler__(
-            self.__locator_elements__["dynamic_subhead"]
-        )
+        query_data = ("misc_items", "name", "dynamic_subhead", "*")
+        dynamic_subhead = self.__convert_record_to_dict__(query_data)
+        dynamic_subhead_item = self.__locator_handler__(dynamic_subhead)
         return self.__read_item_text__(*dynamic_subhead_item)
 
     def read_button(self):
         """
         Method used to read the text from the "Button" of the page.
         """
-        button_item = self.__locator_handler__(self.__locator_elements__["button"])
+        query_data = ("misc_items", "name", "button", "*")
+        button_elem = self.__convert_record_to_dict__(query_data)
+        button_item = self.__locator_handler__(button_elem)
         return self.__read_item_text__(*button_item)
 
     def read_paragraph(self):
         """
         Method used to read the text from the paragraph of the page.
         """
-        paragraph_item = self.__locator_handler__(
-            self.__locator_elements__["paragraph_with_text"]
-        )
+        query_data = ("misc_items", "name", "paragraph_with_text", "*")
+        paragraph_with_text = self.__convert_record_to_dict__(query_data)
+        paragraph_item = self.__locator_handler__(paragraph_with_text)
         return self.__read_item_text__(*paragraph_item)
 
     def read_only_field(self):
@@ -160,9 +201,9 @@ class DemoPage:
 
         :return text: the text value read from the read only field of the page.
         """
-        read_only_item = self.__locator_handler__(
-            self.__locator_elements__["read_only_text_field"]
-        )
+        query_data = ("misc_items", "name", "read_only_text_field", "*")
+        read_only_text_field = self.__convert_record_to_dict__(query_data)
+        read_only_item = self.__locator_handler__(read_only_text_field)
         return self.driver.find_element(*read_only_item).get_property("value")
 
     def hover_click_option(self):
@@ -171,17 +212,17 @@ class DemoPage:
 
         :return: (str) The text for the hovering option selected.
         """
-        hover_dropdown_item = self.__locator_handler__(
-            self.__locator_elements__["hover_dropdown"]
-        )
+        query_data = ("misc_items", "name", "hover_dropdown", "*")
+        hover_dropdown = self.__convert_record_to_dict__(query_data)
+        hover_dropdown_item = self.__locator_handler__(hover_dropdown)
         self.actions.move_to_element(
             self.driver.find_element(*hover_dropdown_item)
         ).perform()
-        hover_option_item = self.__locator_handler__(
-            self.__locator_elements__["hover_option_text"]
-        )
+        query_data = ("misc_items", "name", "hover_option_text", "*")
+        hover_option_text = self.__convert_record_to_dict__(query_data)
+        hover_option_item = self.__locator_handler__(hover_option_text)
         self.actions.click(self.driver.find_element(*hover_option_item)).perform()
-        return self.__locator_elements__["hover_option_text"]["locator_hook"]
+        return hover_option_text["locator_hook"]
 
     def get_select_dropdown_data(self):
         """
@@ -189,7 +230,8 @@ class DemoPage:
 
         :return: (dict) select dropdown data (locator, maximum width value)
         """
-        return self.__locator_elements__["select_dropdown"]
+        query_data = ("slider_dropdown", "name", "select_dropdown", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def __dropdown_select__(self):
         """
@@ -197,9 +239,9 @@ class DemoPage:
 
         :return: (obj) the selected dropdown menu
         """
-        dropdown_element = self.__locator_handler__(
-            self.__locator_elements__["select_dropdown"]
-        )
+        query_data = ("slider_dropdown", "name", "select_dropdown", "*")
+        select_dropdown = self.__convert_record_to_dict__(query_data)
+        dropdown_element = self.__locator_handler__(select_dropdown)
         dropdown_item = self.driver.find_element(*dropdown_element)
         selected_dropdown = Select(dropdown_item)
         return selected_dropdown
@@ -210,9 +252,9 @@ class DemoPage:
 
         :return: (str) The text for the menu option selected.
         """
-        option_to_select = self.__locator_elements__["meter_label"][
-            "end_progress_value"
-        ]
+        query_data = ("bar_and_label_values", "name", "meter_label", "*")
+        meter_label = self.__convert_record_to_dict__(query_data)
+        option_to_select = meter_label["end_progress_value"]
         select_dropdown = self.__dropdown_select__()
         select_dropdown.select_by_value(option_to_select)
         return option_to_select
@@ -238,23 +280,27 @@ class DemoPage:
         """
         Method used to click on the page's "Button".
         """
-        button_item = self.__locator_handler__(self.__locator_elements__["button"])
+        query_data = ("misc_items", "name", "button", "*")
+        button_elem = self.__convert_record_to_dict__(query_data)
+        button_item = self.__locator_handler__(button_elem)
         self.__click_item__(*button_item)
 
     def click_checkbox(self):
         """
         Method used to click on the page's "CheckBox".
         """
-        checkbox_item = self.__locator_handler__(self.__locator_elements__["checkbox"])
+        query_data = ("misc_items", "name", "checkbox", "*")
+        checkbox_elem = self.__convert_record_to_dict__(query_data)
+        checkbox_item = self.__locator_handler__(checkbox_elem)
         self.__click_item__(*checkbox_item)
 
     def click_html_svg_rect(self):
         """
         Method used to click on the HTML SVG rectangle.
         """
-        html_svg_item = self.__locator_handler__(
-            self.__locator_elements__["html_svg_rect"]
-        )
+        query_data = ("html_svg_item", "name", "html_svg_rect", "*")
+        html_svg_rect = self.__convert_record_to_dict__(query_data)
+        html_svg_item = self.__locator_handler__(html_svg_rect)
         self.__click_item__(*html_svg_item)
 
     def get_html_svg_rect_data(self):
@@ -263,7 +309,8 @@ class DemoPage:
 
         :return: (dict) HTML SVG rectangle data (locator, maximum width value)
         """
-        return self.__locator_elements__["html_svg_rect"]
+        query_data = ("html_svg_item", "name", "html_svg_rect", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def read_html_svg_rect_width(self):
         """
@@ -271,9 +318,9 @@ class DemoPage:
 
         :return: (str) HTML SVG rectangle width value
         """
-        html_svg_rect_item = self.__locator_handler__(
-            self.__locator_elements__["html_svg_rect"]
-        )
+        query_data = ("html_svg_item", "name", "html_svg_rect", "*")
+        html_svg_rect = self.__convert_record_to_dict__(query_data)
+        html_svg_rect_item = self.__locator_handler__(html_svg_rect)
         html_svg_rect_elem = self.driver.find_element(*html_svg_rect_item)
         return html_svg_rect_elem.value_of_css_property("width")
 
@@ -288,18 +335,22 @@ class DemoPage:
         log_messages = list()
 
         # Read the locator hook for the element to be dragged
-        draggable_item = self.__locator_handler__(
-            self.__locator_elements__["draggable_item"]
-        )
+        query_data = ("misc_items", "name", "draggable_item", "*")
+        draggable_data = self.__convert_record_to_dict__(query_data)
+        draggable_item = self.__locator_handler__(draggable_data)
 
         # Set up a web driver wait procedure, based on the visibility of the element condition
         wait = WebDriverWait(self.driver, 3)
         wait.until(expected_conditions.visibility_of_element_located(draggable_item))
 
         # Identify the source and target zones
-        source_item = self.__locator_handler__(self.__locator_elements__["dropzone_1"])
+        query_data = ("misc_items", "name", "dropzone_1", "*")
+        dropzone_1 = self.__convert_record_to_dict__(query_data)
+        source_item = self.__locator_handler__(dropzone_1)
         source_zone = self.driver.find_element(*source_item)
-        target_item = self.__locator_handler__(self.__locator_elements__["dropzone_2"])
+        query_data = ("misc_items", "name", "dropzone_2", "*")
+        dropzone_2 = self.__convert_record_to_dict__(query_data)
+        target_item = self.__locator_handler__(dropzone_2)
         target_zone = self.driver.find_element(*target_item)
 
         # Identify the item to be dragged
@@ -338,8 +389,8 @@ class DemoPage:
 
         # Perform the drag and drop action
         sim_drag_and_drop_str = "$('%s').simulateDragDrop({ dropTarget: '%s'});" % (
-            self.__locator_elements__["draggable_item"]["locator_hook"],
-            self.__locator_elements__["dropzone_2"]["locator_hook"],
+            draggable_data["locator_hook"],
+            dropzone_2["locator_hook"],
         )
         self.driver.execute_script(drag_and_drop_js + sim_drag_and_drop_str)
         log_messages.append("Drag and drop action performed")
@@ -361,18 +412,22 @@ class DemoPage:
         Method used to verify the switch to iFrames functionality
         :return: (bool, str) Verification that the iFrame switches succeeded
         """
-        self.driver.switch_to.frame(self.__locator_elements__["iframe2"]["iframe_name"])
-        iframe2_item = self.__locator_handler__(self.__locator_elements__["iframe2"])
+        query_data = ("iframe_items", "name", "iframe2", "*")
+        iframe2_dict = self.__convert_record_to_dict__(query_data)
+        self.driver.switch_to.frame(iframe2_dict["iframe_name"])
+        iframe2_item = self.__locator_handler__(iframe2_dict)
         iframe2_text = self.driver.find_element(*iframe2_item).text
-        expected_text = self.__locator_elements__["iframe2"]["iframe_expected_text"]
+        expected_text = iframe2_dict["expected_text"]
         if iframe2_text != expected_text:
             return (
                 False,
                 f"Detected iFrame text: {iframe2_text}, expected: {expected_text}",
             )
         self.driver.switch_to.default_content()
-        self.driver.switch_to.frame(self.__locator_elements__["iframe3"]["iframe_name"])
-        iframe3_item = self.__locator_handler__(self.__locator_elements__["iframe3"])
+        query_data = ("iframe_items", "name", "iframe3", "*")
+        iframe3_dict = self.__convert_record_to_dict__(query_data)
+        self.driver.switch_to.frame(iframe3_dict["iframe_name"])
+        iframe3_item = self.__locator_handler__(iframe3_dict)
         self.__click_item__(*iframe3_item)
         self.driver.switch_to.default_content()
         return True, "Detected iFrame2 text as expected, iFrame3 checkbox clicked"
@@ -383,7 +438,8 @@ class DemoPage:
 
         :return: (dict) Progress bar data (locator, start & end expected values)
         """
-        return self.__locator_elements__["progress_bar"]
+        query_data = ("bar_and_label_values", "name", "progress_bar", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def get_progress_label_data(self):
         """
@@ -391,7 +447,8 @@ class DemoPage:
 
         :return: (dict) Progress label data (locator, start & end expected values)
         """
-        return self.__locator_elements__["progress_label"]
+        query_data = ("bar_and_label_values", "name", "progress_label", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def get_meter_bar_data(self):
         """
@@ -399,7 +456,8 @@ class DemoPage:
 
         :return: (dict) Progress meter data (locator, start & end expected values)
         """
-        return self.__locator_elements__["meter_bar"]
+        query_data = ("bar_and_label_values", "name", "meter_bar", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def get_meter_label_data(self):
         """
@@ -407,7 +465,8 @@ class DemoPage:
 
         :return: (dict) Progress meter data (locator, start & end expected values)
         """
-        return self.__locator_elements__["meter_label"]
+        query_data = ("bar_and_label_values", "name", "meter_label", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def __read_bar_value__(self, *readable_bar):
         """
@@ -423,11 +482,11 @@ class DemoPage:
 
         :return: (str) The displayed progress bar value
         """
+        query_data = ("bar_and_label_values", "name", "progress_bar", "*")
         bar_value_item = self.__locator_handler__(
-            self.__locator_elements__["progress_bar"]
+            self.__convert_record_to_dict__(query_data)
         )
-        progress_bar_value = self.__read_bar_value__(*bar_value_item)
-        return progress_bar_value
+        return self.__read_bar_value__(*bar_value_item)
 
     def read_meter_bar_value(self):
         """
@@ -435,11 +494,11 @@ class DemoPage:
 
         :return: (str) The displayed meter bar value
         """
+        query_data = ("bar_and_label_values", "name", "meter_bar", "*")
         meter_value_item = self.__locator_handler__(
-            self.__locator_elements__["meter_bar"]
+            self.__convert_record_to_dict__(query_data)
         )
-        progress_meter_value = self.__read_bar_value__(*meter_value_item)
-        return progress_meter_value
+        return self.__read_bar_value__(*meter_value_item)
 
     def __read_label_value__(self, *readable_label):
         """
@@ -461,11 +520,11 @@ class DemoPage:
 
         :return: (str) The displayed progress label value
         """
+        query_data = ("bar_and_label_values", "name", "progress_label", "*")
         label_value_item = self.__locator_handler__(
-            self.__locator_elements__["progress_label"]
+            self.__convert_record_to_dict__(query_data)
         )
-        progress_label_value = self.__read_label_value__(*label_value_item)
-        return progress_label_value
+        return self.__read_label_value__(*label_value_item)
 
     def read_meter_label_value(self):
         """
@@ -473,11 +532,11 @@ class DemoPage:
 
         :return: (str) The displayed progress label value
         """
+        query_data = ("bar_and_label_values", "name", "meter_label", "*")
         label_value_item = self.__locator_handler__(
-            self.__locator_elements__["meter_label"]
+            self.__convert_record_to_dict__(query_data)
         )
-        progress_label_value = self.__read_label_value__(*label_value_item)
-        return progress_label_value
+        return self.__read_label_value__(*label_value_item)
 
     def get_slider_data(self):
         """
@@ -485,28 +544,31 @@ class DemoPage:
 
         :return: (dict) slider object data.
         """
-        return self.__locator_elements__["input_slider_control"]
+        query_data = ("slider_dropdown", "name", "input_slider_control", "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def move_slider_control(self):
         """
         Method used to verify the input slider control movement functionality.
         """
-        input_slider_control = self.__locator_elements__["input_slider_control"]
+        query_data = ("slider_dropdown", "name", "input_slider_control", "*")
+        input_slider_control = self.__convert_record_to_dict__(query_data)
         slider_item = self.__locator_handler__(input_slider_control)
         slider_elem = self.driver.find_element(*slider_item)
         self.actions.drag_and_drop_by_offset(
             slider_elem,
-            xoffset=input_slider_control["x_offset"],
-            yoffset=input_slider_control["y_offset"],
+            xoffset=input_slider_control["custom_field1"],
+            yoffset=input_slider_control["custom_field2"],
         ).perform()
 
     def __get_radio_button_data__(self, radio_button):
         """
         Method used to retrieve the radio button data.
 
-        :return: (dict) radio button data.
+        :return: (dict) radio button data
         """
-        return self.__locator_elements__[radio_button]
+        query_data = ("radio_buttons", "name", radio_button, "*")
+        return self.__convert_record_to_dict__(query_data)
 
     def get_radio_button1_data(self):
         """
@@ -555,7 +617,7 @@ class DemoPage:
         Method used to verify that the draggable item is within the expected zone range.
 
         :param draggable_item: the draggable item to be verified
-        :param expected_zone: the expected zone
+        :param expected_zone: the expected zone where the item should be situated
         :return: (bool, str) the verification result
         """
         margin_tolerance = 10
