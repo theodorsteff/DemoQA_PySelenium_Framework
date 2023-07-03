@@ -1,7 +1,7 @@
 # QA Automation Framework Demo
 ## Selenium with Python integration
 
-**Demo Project:** *Selenium testing framework implementation with Python*  
+**Demo Project:** *Selenium testing framework implementation with Python (Version 1.0)*  
 **Dependency packages installed:** **_pytest_ and _selenium_** *(including their automatically installed dependencies)*  
 **Credits:** *The demo page used is provided by SeleniumBase (https://seleniumbase.io/demo_page)*
 
@@ -13,6 +13,7 @@ In order to install the required packages, please follow the *pip install* comma
 ### selenium
 `» pip install selenium`  
 
+The project uses the sqlite3 extension module, in order to read from the "demopage_data" database.    
 For test suite execution, change the folder path to the "tests" folder of the project and use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases)    
 `» cd <DemoQA_PySelenium_Framework directory>\tests`  
 `» py.test --html report.html` 
@@ -20,3 +21,4 @@ For test suite execution, change the folder path to the "tests" folder of the pr
 **Python version used:** *Python 3.11.0*  
 **Selenium library version used:** *selenium 4.10.0*  
 **Pytest library version used:** *pytest 7.3.1*  
+**SQLite version used:** *sqlite3*
