@@ -2,13 +2,16 @@
 ## Selenium with Python integration
 
 **Demo Project:** *Selenium testing framework implementation with Python (Version 1.0)*  
-**Dependency packages installed:** **_pytest_ and _selenium_** *(including their automatically installed dependencies)*  
+**Dependency packages installed:** **_pytest_, _pytest-html_ and _selenium_** *(including their automatically installed dependencies)*  
 **Credits:** *The demo page used is provided by SeleniumBase (https://seleniumbase.io/demo_page)*
 
 In order to install the required packages, please follow the *pip install* command structure, as showcased below.
 
 ### pytest
 `» pip install pytest`
+
+### pytest html plugin
+`» pip install pytest-html`
 
 ### selenium
 `» pip install selenium`  
@@ -33,7 +36,8 @@ Main elements of the framework:
 - tests.test_demopage -> **TestDemoPage(BaseClass)**    
 *Class used for the tests executions (derives from the base class).*
     
-**Python version used:** *Python 3.11.0*  
-**Selenium library version used:** *selenium 4.10.0*  
-**Pytest library version used:** *pytest 7.3.1*  
-**SQLite version used:** *sqlite3*
+**Python version used:** *Python 3.11.0*
+**Selenium library version used:** *selenium 4.18.1*
+**Pytest library version used:** *pytest 8.0.1*
+**Pytest html plugin version used:** *pytest-html 4.1.1*
+**SQLite module version used:** *sqlite3*

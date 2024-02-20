@@ -13,8 +13,6 @@ This module configures the testing framework.
 import pytest
 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.firefox.service import Service as FirefoxService
 
 # Prototype definition and initialization of the driver as an empty object
 driver = None
