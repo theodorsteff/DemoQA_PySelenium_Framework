@@ -1,39 +1,39 @@
-2023-07-04 00:28:34,372 :INFO : test_color_change_demo :Received data is: ('Green', '1st test', 'Color change not required', 0)
-2023-07-04 00:28:35,079 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
-2023-07-04 00:28:37,133 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-2023-07-04 00:28:37,168 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-2023-07-04 00:28:40,170 :INFO : test_color_change_demo :Green color change demo testcase succeeded
-2023-07-04 00:28:40,178 :INFO : test_color_change_demo :Received data is: ('Purple', '2nd test', 'Color change required', 1)
-2023-07-04 00:28:40,178 :INFO : test_color_change_demo :Received data is: ('Purple', '2nd test', 'Color change required', 1)
-2023-07-04 00:28:40,583 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
-2023-07-04 00:28:40,583 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
-2023-07-04 00:28:42,620 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-2023-07-04 00:28:42,620 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
-2023-07-04 00:28:42,694 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
-2023-07-04 00:28:42,694 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
-2023-07-04 00:28:45,695 :INFO : test_color_change_demo :Purple color change demo testcase succeeded
-2023-07-04 00:28:45,695 :INFO : test_color_change_demo :Purple color change demo testcase succeeded
-2023-07-04 00:28:46,415 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
-2023-07-04 00:28:49,417 :INFO : test_hover_select_by_text :Link Two identified, testcase succeeded
-2023-07-04 00:28:49,956 :INFO : test_drag_and_drop :Draggable item in expected range: range(221, 231)
-2023-07-04 00:28:49,956 :INFO : test_drag_and_drop :Drag and drop action performed
-2023-07-04 00:28:49,956 :INFO : test_drag_and_drop :Draggable item in expected range: range(592, 602)
-2023-07-04 00:28:52,958 :INFO : test_drag_and_drop :Drag and drop action executed, testcase succeeded
-2023-07-04 00:28:53,227 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
-2023-07-04 00:28:56,229 :INFO : test_iframe_switch :iFrame switches executed, testcase succeeded
-2023-07-04 00:28:56,382 :INFO : test_input_slider_control :Detected value: ('50%', '50'), expecting value: ('50%', '50')
-2023-07-04 00:28:59,973 :INFO : test_input_slider_control :Detected value: ('80%', '80'), expecting value: ('80%', '80')
-2023-07-04 00:28:59,973 :INFO : test_input_slider_control :Progress correctly registered, testcase succeeded
-2023-07-04 00:29:00,241 :INFO : test_select_dropdown_by_option_value :Detected value: ('Set to 25%', '25%', '0.25'), expecting value: ('Set to 25%', '25%', '0.25')
-2023-07-04 00:29:06,301 :INFO : test_select_dropdown_by_option_value :Selected Option value: 75%
-2023-07-04 00:29:06,366 :INFO : test_select_dropdown_by_option_value :Detected value: ('Set to 75%', '75%', '0.75'), expecting value: ('Set to 75%', '75%', '0.75')
-2023-07-04 00:29:06,366 :INFO : test_select_dropdown_by_option_value :Progress correctly registered, testcase succeeded
-2023-07-04 00:29:06,494 :INFO : test_html_svg_rectangle :Maximum HTML SVG rectangle width: 154.0
-2023-07-04 00:29:09,516 :INFO : test_html_svg_rectangle :Initial HTML SVG rectangle width: 154.0
-2023-07-04 00:29:09,560 :INFO : test_html_svg_rectangle :Modified HTML SVG rectangle width: 3.45443
-2023-07-04 00:29:09,560 :INFO : test_html_svg_rectangle :HTML SVG Rectangle width changed, testcase succeeded
-2023-07-04 00:29:09,769 :INFO : test_radio_button_selection :Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: True)
-2023-07-04 00:29:09,799 :INFO : test_radio_button_selection :Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: False)
-2023-07-04 00:29:15,871 :INFO : test_radio_button_selection :Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: False)
-2023-07-04 00:29:15,895 :INFO : test_radio_button_selection :Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: True)
-2023-07-04 00:29:15,895 :INFO : test_radio_button_selection :Radio buttons selection changed, testcase succeeded
+2024-02-20 19:19:00,607 :INFO : test_color_change_demo :Received data is: ('Green', '1st test', 'Color change not required', 0)
+2024-02-20 19:19:01,130 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will skip
+2024-02-20 19:19:03,153 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2024-02-20 19:19:03,169 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2024-02-20 19:19:06,172 :INFO : test_color_change_demo :Green color change demo testcase succeeded
+2024-02-20 19:19:06,175 :INFO : test_color_change_demo :Received data is: ('Purple', '2nd test', 'Color change required', 1)
+2024-02-20 19:19:06,175 :INFO : test_color_change_demo :Received data is: ('Purple', '2nd test', 'Color change required', 1)
+2024-02-20 19:19:06,286 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2024-02-20 19:19:06,286 :INFO : test_color_change_demo :Initial placeholder text: Placeholder Text Field, New placeholder text: Color change will execute
+2024-02-20 19:19:08,300 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2024-02-20 19:19:08,300 :INFO : test_color_change_demo :Button text: Click Me (Green), Read only field text: The Color is Green, Paragraph text: This Text is Green
+2024-02-20 19:19:08,537 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2024-02-20 19:19:08,537 :INFO : test_color_change_demo :Button text: Click Me (Purple), Read only field text: The Color is Purple, Paragraph text: This Text is Purple
+2024-02-20 19:19:11,539 :INFO : test_color_change_demo :Purple color change demo testcase succeeded
+2024-02-20 19:19:11,539 :INFO : test_color_change_demo :Purple color change demo testcase succeeded
+2024-02-20 19:19:12,144 :INFO : test_hover_select_by_text :Selected Option text: Link Two, Dynamic subhead title: Link Two Selected
+2024-02-20 19:19:15,154 :INFO : test_hover_select_by_text :Link Two identified, testcase succeeded
+2024-02-20 19:19:15,654 :INFO : test_drag_and_drop :Draggable item in expected range: range(221, 231)
+2024-02-20 19:19:15,654 :INFO : test_drag_and_drop :Drag and drop action performed
+2024-02-20 19:19:15,654 :INFO : test_drag_and_drop :Draggable item in expected range: range(591, 601)
+2024-02-20 19:19:18,659 :INFO : test_drag_and_drop :Drag and drop action executed, testcase succeeded
+2024-02-20 19:19:18,944 :INFO : test_iframe_switch :Detected iFrame2 text as expected, iFrame3 checkbox clicked
+2024-02-20 19:19:21,949 :INFO : test_iframe_switch :iFrame switches executed, testcase succeeded
+2024-02-20 19:19:22,001 :INFO : test_input_slider_control :Detected value: ('50%', '50'), expecting value: ('50%', '50')
+2024-02-20 19:19:25,531 :INFO : test_input_slider_control :Detected value: ('80%', '80'), expecting value: ('80%', '80')
+2024-02-20 19:19:25,531 :INFO : test_input_slider_control :Progress correctly registered, testcase succeeded
+2024-02-20 19:19:25,598 :INFO : test_select_dropdown_by_option_value :Detected value: ('Set to 25%', '25%', '0.25'), expecting value: ('Set to 25%', '25%', '0.25')
+2024-02-20 19:19:31,834 :INFO : test_select_dropdown_by_option_value :Selected Option value: 75%
+2024-02-20 19:19:31,872 :INFO : test_select_dropdown_by_option_value :Detected value: ('Set to 75%', '75%', '0.75'), expecting value: ('Set to 75%', '75%', '0.75')
+2024-02-20 19:19:31,872 :INFO : test_select_dropdown_by_option_value :Progress correctly registered, testcase succeeded
+2024-02-20 19:19:31,939 :INFO : test_html_svg_rectangle :Maximum HTML SVG rectangle width: 154.0
+2024-02-20 19:19:34,943 :INFO : test_html_svg_rectangle :Initial HTML SVG rectangle width: 154.0
+2024-02-20 19:19:35,179 :INFO : test_html_svg_rectangle :Modified HTML SVG rectangle width: 34.201
+2024-02-20 19:19:35,179 :INFO : test_html_svg_rectangle :HTML SVG Rectangle width changed, testcase succeeded
+2024-02-20 19:19:35,253 :INFO : test_radio_button_selection :Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: True)
+2024-02-20 19:19:35,277 :INFO : test_radio_button_selection :Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: False)
+2024-02-20 19:19:41,502 :INFO : test_radio_button_selection :Detected button radioButton1 selection values = (displayed: True, enabled: True, selected: False)
+2024-02-20 19:19:41,520 :INFO : test_radio_button_selection :Detected button radioButton2 selection values = (displayed: True, enabled: True, selected: True)
+2024-02-20 19:19:41,520 :INFO : test_radio_button_selection :Radio buttons selection changed, testcase succeeded

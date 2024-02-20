@@ -25,7 +25,7 @@ def pytest_addoption(parser):
     PyTest's method used to add options to the parser
     (e.g.: browser to be used).
     """
-    parser.addoption("--browser_name", action="store", default="chrome")
+    parser.addoption("--browser_name", action="store", default="firefox")
 
 
 @pytest.fixture(scope="class")
@@ -42,13 +42,11 @@ def setup(request):
     if browser_name == "chrome":
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--start-maximized")
-        service_obj = ChromeService(r"C:\SeleniumDrivers")
-        driver = webdriver.Chrome(options=chrome_options, service=service_obj)
+        driver = webdriver.Chrome(options=chrome_options)
     elif browser_name == "firefox":
         firefox_options = webdriver.FirefoxOptions()
         firefox_options.add_argument("--start-maximized")
-        service_obj = FirefoxService(r"C:\SeleniumDrivers")
-        driver = webdriver.Firefox(options=firefox_options, service=service_obj)
+        driver = webdriver.Firefox(options=firefox_options)
 
     # Passing the driver to the request parameters,
     # in order to be used by the test classes. The driver will be then
