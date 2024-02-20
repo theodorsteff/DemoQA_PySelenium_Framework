@@ -18,7 +18,21 @@ The project uses the sqlite3 python extension module, in order to read from the 
 For test suite execution, change the folder path to the "tests" folder of the project and use the pytest syntax, as shown below ("--html report.html" will generate a test report in the same folder as the location of the testcases).    
 `» cd <DemoQA_PySelenium_Framework directory>\tests`  
 `» py.test --html report.html` 
-
+    
+Main elements of the framework:
+- utilities.baseclass -> **BaseClass**    
+*Base class from which all test classes inherit; it's being used to instantiate the logging object.*
+- testdata.demopage_data -> **DemoPageData**    
+*Class used to handle multiple data sets for multiple executions of a single test.*
+-  testdata.**demopage_data.db**    
+*Database used to feed the required configuration and web objects localization data.*
+- pageobjects.demopage -> **DemoPage**    
+*Class used to handle the web objects and page interactions.*
+- tests.**conftest**    
+*Module used to configure pytest; it's also being used to instantiate the Selenium webdriver.*
+- tests.test_demopage -> **TestDemoPage(BaseClass)**    
+*Class used for the tests executions (derives from the base class).*
+    
 **Python version used:** *Python 3.11.0*  
 **Selenium library version used:** *selenium 4.10.0*  
 **Pytest library version used:** *pytest 7.3.1*  
