@@ -36,8 +36,8 @@ Main elements of the framework:
 - tests.test_demopage -> **TestDemoPage(BaseClass)**    
 *Class used for the tests executions (derives from the base class).*
     
-**Python version used:** *Python 3.11.0*
-**Selenium library version used:** *selenium 4.18.1*
-**Pytest library version used:** *pytest 8.0.1*
-**Pytest html plugin version used:** *pytest-html 4.1.1*
+**Python version used:** *Python 3.11.0*  
+**Selenium library version used:** *selenium 4.18.1*  
+**Pytest library version used:** *pytest 8.0.1*  
+**Pytest html plugin version used:** *pytest-html 4.1.1*  
 **SQLite module version used:** *sqlite3*
